@@ -73,9 +73,7 @@ before_action :authenticate_user!
           $lcCuentas=" El pago del documento sera necesariamente efectuado mediante deposito en cualquiera de las siguientes cuentas bancarias:
   Banco SCOTIABANK Cuenta Corriente en Moneda Nacional Numero: 000-2681110  CCI: 009-702-000002681110-29
   BBVA Continental Cuenta Corriente en Moneda Nacional Numero: 0011-0244-01-00023293  CCI: 011 244 000100023293 12
-  BBVA Continental Cuenta Corriente en Moneda Extranjera Numero: 0011-0244-02-00040322 CCI: 01124400020004032216
-  BCP Cuenta Corriente en Moneda Nacional Numero: 191-2231128-0-45 CCI: 00219100223112804551
-  BCP Cuenta Corriente en Moneda Extranjera Numero: 191-2222846-198 CCI:  00219100222284619858"
+  BBVA Continental Cuenta Corriente en Moneda Extranjera Numero: 0011-0244-02-00040322 CCI: 01124400020004032216"
 
 
           $lcScop1       =""   
