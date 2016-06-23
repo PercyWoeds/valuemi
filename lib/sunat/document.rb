@@ -56,15 +56,15 @@ module SUNAT
 
     def build_pdf_header(pdf)
       if self.accounting_supplier_party.logo_path.present?
-        pdf.image "#{self.accounting_supplier_party.logo_path}", :width => 100
+        pdf.image "#{self.accounting_supplier_party.logo_path}", :width => 150
         pdf.move_down 6
       end
-      pdf.text "#{self.accounting_supplier_party.party.party_legal_entity.registration_name}", :size => 12,
+      pdf.text "#{self.accounting_supplier_party.party.party_legal_entity.registration_name}", :size => 10,
                                                                                                :style => :bold
       pdf.move_down 4
-      pdf.text supplier.street, :size => 10
-      pdf.text supplier.district, :size => 10
-      pdf.text supplier.city, :size => 10
+      pdf.text supplier.street, :size => 8
+      pdf.text supplier.district, :size => 8
+      pdf.text supplier.city, :size => 8
       pdf.move_down 4
 
       pdf.bounding_box([325, 725], :width => 200, :height => 80) do
@@ -95,7 +95,7 @@ module SUNAT
     def build_pdf_footer(pdf)
 
 
-      pdf.bounding_box([0, 50], :width => 535, :height => 50) do
+      pdf.bounding_box([0, 50], :width => 535, :height => 60) do
       pdf.stroke_bounds
 
       pdf.text  $lcAutorizacion1 ,  :align => :center,:valign => :center, :style => :bold
