@@ -17,7 +17,7 @@ SUNAT.configure do |config|
   end
 
   config.supplier do |s|
-    s.legal_name = "HIDROTRANSP S.A.C."
+    s.legal_name = "INVERSIONES VALUEMI S.A.C."
     s.name       = "Cesar Jaime Manrique Milla"
     s.ruc        = "20555691263"
     s.address_id = "150117"
