@@ -132,6 +132,7 @@ module SUNAT
         :width => pdf.bounds.width/2
       } do
         columns([0]).font_style = :bold
+        columns([1]).align = :right
       end
 
       pdf
@@ -161,6 +162,7 @@ module SUNAT
       invoice_headers = [["Fecha de emisión :", issue_date]]
       #invoice_headers = [["Fecha de emisión :", "2015-12-09"]]
       invoice_headers << ["Tipo de moneda : ", Currency.new(document_currency_code).singular_name.upcase]
+      invoice_headers << ["Guia Remision :", $lcGuiaRemision]
       invoice_headers
     end
 

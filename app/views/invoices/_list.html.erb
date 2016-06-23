@@ -1,0 +1,101 @@
+<link rel="stylesheet" href="font-awesome.min.css">
+
+<% if @invoices.count > 0 %>
+  <table>
+    <thead>
+      <tr>
+        <th class="bordered_right bordered_bottom" style="width: 100px;">
+          Cliente
+        </th>
+        <th class="bordered_right bordered_bottom">
+          Fecha
+        </th>
+        
+        <th class="bordered_right bordered_bottom">
+          Td
+        </th>
+        <th class="bordered_right bordered_bottom">
+          Serie
+        </th>
+        <th class="bordered_right bordered_bottom">
+          Numero
+        </th>
+        <th class="bordered_right bordered_bottom">
+          PC/Igv
+        </th>
+
+        <th class="bordered_right bordered_bottom">
+          Cantidad
+        </th>
+        <th class="bordered_right bordered_bottom">
+          V.Venta
+        </th>
+        <th class="bordered_right bordered_bottom">
+          I.G.V.
+        </th>
+        <th class="bordered_right bordered_bottom">
+          Importe 
+        </th>        
+        <th class="bordered_right bordered_bottom" style="width: 350px;">
+          Razon Social
+        </th>
+        
+      </tr>
+    </thead>
+
+    <tbody>
+      <% for invoice in @invoices %>
+        <tr>
+          <td class="bordered_right bordered_bottom">
+            <%= link_to invoice.cliente, invoice, :title => "Ir a factura" %>
+          </td>
+          <td class="bordered_right bordered_bottom">
+            <%= invoice.fecha %>
+          </td>
+          <td class="bordered_right bordered_bottom">
+            <%= invoice.td %>
+          </td>
+          <td class="bordered_right bordered_bottom right">
+            <%= invoice.serie %>
+          </td>
+          <td class="bordered_right bordered_bottom right">
+          <%= invoice.numero  %>
+          </td>
+          
+          <td class="bordered_right bordered_bottom right">
+            S/.<%= money(invoice.preciocigv) %>
+          </td>
+          <td class="bordered_right bordered_bottom right">
+            S/.<%= money(invoice.cantidad) %>
+          </td>
+          
+          <td class="bordered_right bordered_bottom right">
+            S/.<%= money(invoice.vventa) %>
+          </td>
+          
+          <td class="bordered_right bordered_bottom right">
+            S/.<%= money(invoice.igv) %>
+          </td>
+          
+          <td class="bordered_right bordered_bottom right">
+            S/.<%= money(invoice.importe) %>
+          </td>
+          <td class="bordered_right bordered_bottom">
+            <%=  invoice.vrazon2 %>
+          </td>
+          
+          <td class="bordered_right bordered_bottom">           
+            <i class="fa fa-search" aria-hidden="true"  > <%=link_to "Ver", invoice, data: { no_turbolink: true }  %>  </i>
+
+          </td>          
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate @invoices %> 
+
+<% else %>
+  <p class="error">
+    We couldn't find any invoices.
+  </p>
+<% end %>

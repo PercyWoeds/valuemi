@@ -1,19 +1,5 @@
 <h1> </h1>
 
-<style>
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-th, td {
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even){background-color: #f2f2f2}
-</style>
-
 
 <h1>Listado Facturas</h1>
 
@@ -26,48 +12,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 <% end %>
 
 
-<table class="table table-hover">
-
- <tr>
-    <th>Cliente</th>
-    <th>Fecha</th>
-    <th>Td</th>
-    <th>Serie</th>
-    <th>Numero</th>
-    <th>P.C/Igv</th>
-    <th>Cantidad</th>
-    <th>Vventa</th>
-    <th>Igv</th>
-    <th>Importe</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @invoices.each do |invoice| %>
-  <tr>
-    <td><%= invoice.cliente %></td>
-    <td><%= invoice.fecha %></td>
-    <td><%= invoice.td %></td>
-    <td><%= invoice.serie %></td>
-    <td><%= invoice.numero %></td>
-    <td><%= invoice.preciocigv %></td>
-    <td><%= invoice.cantidad %></td>
-    <td><%= invoice.vventa %></td>
-    <td><%= invoice.igv %></td>
-    <td><%= invoice.importe %></td>
-    <td><%= invoice.vrazon2 %></td>
-    
-    <td><%= link_to('Ver', invoice  , data: { no_turbolink: true }) %> </td>
-    
-  </tr>
-<% end %>
-</table>
-</div>
-</div>
-<%=will_paginate  @invoices %>
-
-
+<%= render 'invoices/list' %>
 
 <h2>Importar Archivo Facturas "*.csv"</h2>
 <%= form_tag import_invoices_path, multipart: true do %>
