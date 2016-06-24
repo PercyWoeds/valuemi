@@ -4,6 +4,7 @@ module SUNAT
   # used to generate an XML document suitable for presentation.
   # Represents a legal payment for SUNAT. Spanish: Factura
   #
+require 'active_support/number_helper'
 
   class BasicInvoice < Document
 
@@ -100,6 +101,7 @@ module SUNAT
           :width => pdf.bounds.width
         }) do
           columns([0, 2]).font_style = :bold
+
         end
 
         pdf.move_down 20
@@ -121,9 +123,18 @@ module SUNAT
         table_content << line.build_pdf_table_row(pdf)
       end
 
-      result = pdf.table table_content, :position => :center,
+      result = pdf.table table_content, {:position => :center,
                                         :header => true,
                                         :width => pdf.bounds.width
+                                        } do 
+                                          columns([0]).align=:center
+                                          columns([1]).align=:right
+                                          columns([2]).align=:center
+                                          columns([4]).align=:right
+                                          columns([5]).align=:right
+                                          columns([6]).align=:right
+                                        end
+
       pdf.move_down 10
 
       pdf.table invoice_summary, {
@@ -133,6 +144,7 @@ module SUNAT
       } do
         columns([0]).font_style = :bold
         columns([1]).align = :right
+        
       end
 
       pdf
@@ -178,21 +190,22 @@ module SUNAT
       monetary_totals.each do |monetary_total|
         value = get_monetary_total_by_id(SUNAT::ANNEX::CATALOG_14[monetary_total[:catalog_index]])
         if value.present?
-          invoice_summary << [monetary_total[:label], value.payable_amount.to_s]
+          invoice_summary << [monetary_total[:label], ActiveSupport::NumberHelper::number_to_delimited(value.payable_amount,delimiter:",",separator:".").to_s]
         end
       end
 
       tax_totals.each do |tax_total|
-        invoice_summary << [tax_total.tax_type_name, tax_total.tax_amount.to_s]
+        invoice_summary << [tax_total.tax_type_name,ActiveSupport::NumberHelper::number_to_delimited(tax_total.tax_amount,delimiter:",",separator:".").to_s]
       end
 
-      invoice_summary << ["Total", legal_monetary_total.to_s]
+      invoice_summary << ["Total", ActiveSupport::NumberHelper::number_to_delimited(legal_monetary_total,delimiter:",",separator:".").to_s]
+
       if get_additional_property_by_id(SUNAT::ANNEX::CATALOG_15[0])
         total = get_additional_property_by_id(SUNAT::ANNEX::CATALOG_15[0]).value
       else
         total = legal_monetary_total.textify.upcase
       end
-      invoice_summary << ["Monto del total", total]
+      invoice_summary << ["Monto del total", ActiveSupport::NumberHelper::number_to_delimited(total,delimiter:",",separator:".")]
       invoice_summary
     end
 
