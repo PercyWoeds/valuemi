@@ -12,27 +12,16 @@
         </th>
         
         <th class="bordered_right bordered_bottom">
-          Td
-        </th>
-        <th class="bordered_right bordered_bottom">
-          Serie
-        </th>
-        <th class="bordered_right bordered_bottom">
-          Numero
+          Documento
         </th>
         <th class="bordered_right bordered_bottom">
           PC/Igv
         </th>
 
         <th class="bordered_right bordered_bottom">
-          Cantidad
+          Cantidad        
         </th>
-        <th class="bordered_right bordered_bottom">
-          V.Venta
-        </th>
-        <th class="bordered_right bordered_bottom">
-          I.G.V.
-        </th>
+
         <th class="bordered_right bordered_bottom">
           Importe 
         </th>        
@@ -53,13 +42,7 @@
             <%= invoice.fecha %>
           </td>
           <td class="bordered_right bordered_bottom">
-            <%= invoice.td %>
-          </td>
-          <td class="bordered_right bordered_bottom right">
-            <%= invoice.serie %>
-          </td>
-          <td class="bordered_right bordered_bottom right">
-          <%= invoice.numero  %>
+            <%= invoice.td<<"-"<<invoice.serie<<"-"<<invoice.numero %>
           </td>
           
           <td class="bordered_right bordered_bottom right">
@@ -67,15 +50,7 @@
           </td>
           <td class="bordered_right bordered_bottom right">
             S/.<%= money(invoice.cantidad) %>
-          </td>
-          
-          <td class="bordered_right bordered_bottom right">
-            S/.<%= money(invoice.vventa) %>
-          </td>
-          
-          <td class="bordered_right bordered_bottom right">
-            S/.<%= money(invoice.igv) %>
-          </td>
+          </td>          
           
           <td class="bordered_right bordered_bottom right">
             S/.<%= money(invoice.importe) %>
