@@ -85,7 +85,7 @@ Rails.application.configure do
     port:                 587,
     domain:               'one.com',
     user_name:            'factura-electronica@valuemiperu.com',
-    password:             'factura2016',
+    password:             'Factura2016',
     authentication:       'plain',
     enable_starttls_auto: true  }
 
