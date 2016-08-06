@@ -7,7 +7,7 @@ class ActionCorreo < ApplicationMailer
 		  #attachments["Factura"] = File.read("#{$lcFileName1}")
 		  #attachments['Factura'] = File.read($lcFileName1)
 		  email_with_copy = "Factura Enviada <administracion@valuemiperu.com>"	
-		  email_with_name = "Factura Enviada <Factura-electronica@valuemiperu.com>"	
+		  email_with_name = "Factura Enviada <factura-electronica@valuemiperu.com>"	
 
 		  attachments[$lcFileName] =  open($lcFileName1).read
 
