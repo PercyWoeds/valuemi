@@ -13,7 +13,7 @@ class ActionCorreo < ApplicationMailer
 
 		  attachments[$lcFilezip] =  open($lcFile2).read
 
-		  mail(to: [$lcMail,$lcMail2,$lcMail3], cc:email_with_copy,  bcc:email_with_name, subject: 'Factura Electrónica : '+$lcFileNameIni )
+		  mail(to: [$lcMail,$lcMail2,$lcMail3], cc: email_with_copy, bcc:email_with_name, subject: 'Factura Electrónica : '+$lcFileNameIni )
 
 
 	  end

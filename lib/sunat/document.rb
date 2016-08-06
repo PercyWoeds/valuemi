@@ -95,7 +95,7 @@ module SUNAT
     def build_pdf_footer(pdf)
 
 
-      pdf.bounding_box([0, 50], :width => 535, :height => 60) do
+      pdf.bounding_box([0, 80], :width => 535, :height => 60) do
       pdf.stroke_bounds
 
       pdf.text  $lcAutorizacion1 ,  :align => :center,:valign => :center, :style => :bold
