@@ -1,7 +1,6 @@
 class ActionCorreo < ApplicationMailer
   	  default from: 'factura-electronica@valuemiperu.com'
 
-
 	  def bienvenido_email(invoice)
 		  @invoices=invoice 			
 		   @url  = 'http://www.apple.com'
