@@ -79,18 +79,32 @@ class InvoicesController < ApplicationController
         #$lcAutorizacion1=""
 
           $lcPercentIgv  =18000   
+<<<<<<< HEAD
           $lcAutorizacion="Autorizado mediante Resolucion de Intendencia Nro.034-005-0004185/SUNAT del 26/10/2015 "
         $lcCuentas=" El pago del documento sera necesariamente efectuado mediante deposito en cualquiera de las siguientes cuentas bancarias:  
 Banco SCOTIABANK Cuenta Corriente soles : 000-2681110 CCI : 009-702-000002681110-29
 BBVA CONTINENTAL Cuenta Corriente soles : 0011-0244-01-00023293 CCI : 011 244 000100023293 12
 Banco de CREDITO Cuenta Corriente soles : 191-2231128-0-45 CCI : 00219100223112804551"
+=======
+          $lcAutorizacion="Autorizado mediante Resolucion de Intendencia Nro.034-005-0005592/SUNAT del 22/06/2016 "
+          $lcCuentas=" El pago del documento sera necesariamente efectuado mediante deposito en cualquiera de las siguientes cuentas bancarias:  
+  BBVA Continental Cuenta Corriente en Moneda Nacional Numero: 0011-0172-01-00041266
+  BBVA Continental Cuenta Corriente en Moneda Extranjera Numero: 0011-0176-01-00063164 
+BCP Cuenta Corriente Moneda Nacional : 191-2167239-0-01
+BCP Cuenta Recaudadora Moneda Nacional : 191-2264838-0-49"  
+
+>>>>>>> f73fc28c868609a97618127025826cb6b8de093e
 
           $lcScop1       =""   
           $lcScop2       =""
           $lcCantScop1   =""
           $lcCantScop2   =""  
           $lcAutorizacion1=$lcAutorizacion +$lcCuentas
+<<<<<<< HEAD
                                 
+=======
+                
+>>>>>>> f73fc28c868609a97618127025826cb6b8de093e
     end
 
     def sendsunat

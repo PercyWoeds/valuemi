@@ -1,11 +1,16 @@
+<<<<<<< HEAD
 
 
 <link rel="stylesheet">
+=======
+<link rel="stylesheet" href="font-awesome.min.css">
+>>>>>>> f73fc28c868609a97618127025826cb6b8de093e
 
 <% if @invoices.count > 0 %>
   <table>
     <thead>
       <tr>
+<<<<<<< HEAD
         <th class="bordered_right bordered_bottom" style="width: 80px;">
           Cliente
         </th>
@@ -13,11 +18,17 @@
           Razon Social
         </th>
         
+=======
+        <th class="bordered_right bordered_bottom" style="width: 100px;">
+          Cliente
+        </th>
+>>>>>>> f73fc28c868609a97618127025826cb6b8de093e
         <th class="bordered_right bordered_bottom">
           Fecha
         </th>
         
         <th class="bordered_right bordered_bottom">
+<<<<<<< HEAD
           Td
         </th>
         <th class="bordered_right bordered_bottom">
@@ -25,12 +36,16 @@
         </th>
         <th class="bordered_right bordered_bottom">
           Numero
+=======
+          Documento
+>>>>>>> f73fc28c868609a97618127025826cb6b8de093e
         </th>
         <th class="bordered_right bordered_bottom">
           PC/Igv
         </th>
 
         <th class="bordered_right bordered_bottom">
+<<<<<<< HEAD
           Cantidad
         </th>
         <th class="bordered_right bordered_bottom">
@@ -50,6 +65,18 @@
         </th>
         
         
+=======
+          Cantidad        
+        </th>
+
+        <th class="bordered_right bordered_bottom">
+          Importe 
+        </th>        
+        <th class="bordered_right bordered_bottom" style="width: 350px;">
+          Razon Social
+        </th>
+        
+>>>>>>> f73fc28c868609a97618127025826cb6b8de093e
       </tr>
     </thead>
 
@@ -60,6 +87,7 @@
             <%= link_to invoice.cliente, invoice, :title => "Ir a factura" %>
           </td>
           <td class="bordered_right bordered_bottom">
+<<<<<<< HEAD
             <%=  invoice.vrazon2 %>
           </td>
           
@@ -74,6 +102,12 @@
           </td>
           <td class="bordered_right bordered_bottom right">
           <%= invoice.numero  %>
+=======
+            <%= invoice.fecha %>
+          </td>
+          <td class="bordered_right bordered_bottom">
+            <%= invoice.td<<"-"<<invoice.serie<<"-"<<invoice.numero %>
+>>>>>>> f73fc28c868609a97618127025826cb6b8de093e
           </td>
           
           <td class="bordered_right bordered_bottom right">
@@ -81,6 +115,7 @@
           </td>
           <td class="bordered_right bordered_bottom right">
             S/.<%= money(invoice.cantidad) %>
+<<<<<<< HEAD
           </td>
           
           <td class="bordered_right bordered_bottom right">
@@ -90,10 +125,14 @@
           <td class="bordered_right bordered_bottom right">
             S/.<%= money(invoice.igv) %>
           </td>
+=======
+          </td>          
+>>>>>>> f73fc28c868609a97618127025826cb6b8de093e
           
           <td class="bordered_right bordered_bottom right">
             S/.<%= money(invoice.importe) %>
           </td>
+<<<<<<< HEAD
           <td class="bordered_right bordered_bottom right">
           <% if invoice.flag1 != nil && invoice.flag1 != ""  %>          
             <i class="fa fa-check-square-o" aria-hidden="true"></i>            
@@ -101,6 +140,14 @@
           </td>
           <td class="bordered_right bordered_bottom">           
             <i> <%=link_to "Ver", invoice, data: { no_turbolink: true } %>  </i>
+=======
+          <td class="bordered_right bordered_bottom">
+            <%=  invoice.vrazon2 %>
+          </td>
+          
+          <td class="bordered_right bordered_bottom">           
+            <i class="fa fa-search" aria-hidden="true"  > <%=link_to "Ver", invoice, data: { no_turbolink: true }  %>  </i>
+>>>>>>> f73fc28c868609a97618127025826cb6b8de093e
 
           </td>          
         </tr>
@@ -113,6 +160,7 @@
   <p class="error">
     We couldn't find any invoices.
   </p>
+<<<<<<< HEAD
 <% end %>
 
 <style>
@@ -129,3 +177,6 @@ th, td {
 tr:nth-child(even){background-color: #f2f2f2}
 </style>
 
+=======
+<% end %>
+>>>>>>> f73fc28c868609a97618127025826cb6b8de093e

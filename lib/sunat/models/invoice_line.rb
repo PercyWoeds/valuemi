@@ -1,5 +1,6 @@
 module SUNAT 
- 
+require 'active_support/number_helper'
+
   # Generate a new line for an invoice.
   #
   # Helpers are included to make the process a little easier.
@@ -106,12 +107,12 @@ module SUNAT
     def build_pdf_table_row(pdf)
       row = []
       row << self.id
-      row << self.quantity.quantity
+      row << ActiveSupport::NumberHelper::number_to_rounded(self.quantity.quantity,precision: 2, separator:".",delimiter:",")
       row << self.quantity.unit_code
       row << "#{self.item.description} - #{self.item.id}"
       row << "#{self.pricing_reference.alternative_condition_price.price_amount.to_s}"
       row << "#{self.price.to_s}"
-      row << "#{self.line_extension_amount.to_s}"
+      row << "#{ActiveSupport::NumberHelper::number_to_delimited(self.line_extension_amount,delimiter:",",separator:".").to_s}"
     end
 
     def build_xml(xml)
