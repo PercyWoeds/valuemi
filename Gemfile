@@ -6,6 +6,7 @@ gem 'rails', '4.2.5.1'
 gem 'httpclient', '~> 2.8', '>= 2.8.2.2'
 
 
+
 gem 'rspec-core', '~> 3.5', '>= 3.5.1'
 
 # Use SCSS for stylesheets

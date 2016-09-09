@@ -4,22 +4,22 @@ SUNAT.configure do |config|
   config.credentials do |c|
 
 
-    c.ruc       = "20522012336"
+    c.ruc       = "20555691263"
     c.username  = "FACTURA2"
-    c.password  = "20522012336"
+    c.password  = "20555691263"
    end
 
   config.signature do |s|
-    s.party_id    = "20522012336"
-    s.party_name  = "HIDROTRANSP S.A.C."
-    s.cert_file   = File.join(Dir.pwd, './app/keys', 'CESAR JAIME MANRIQUE MILLA.crt')
-    s.pk_file     = File.join(Dir.pwd, './app/keys', 'sunat-private.key') 
+    s.party_id    = "20555691263"
+    s.party_name  = "INVERSIONES VALUEMI S.A.C."
+    s.cert_file   = File.join(Dir.pwd, './app/keys', 'certificado.crt')
+    s.pk_file     = File.join(Dir.pwd, './app/keys', 'CERTIFICADO.key') 
   end
 
   config.supplier do |s|
-    s.legal_name = "HIDROTRANSP S.A.C."
+    s.legal_name = "INVERSIONES VALUEMI S.A.C."
     s.name       = "Cesar Jaime Manrique Milla"
-    s.ruc        = "20522012336"
+    s.ruc        = "20555691263"
     s.address_id = "150117"
     s.street     = "JR. TOMAS CATARI NRO. 405 URB. EL TREBOL 1RA. ETAPA"
     s.district   = "LOS OLIVOS"
